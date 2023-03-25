@@ -56,7 +56,7 @@ ROOT_URLCONF = 'corpRegConfig.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],  # this list is empty by default. But we have this so we can have our templates in one folder instead of scattered in different applications
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
