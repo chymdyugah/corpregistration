@@ -119,16 +119,24 @@
                       </g>
                     </svg>
                   </span>
-                  <span class="app-brand-text demo text-body fw-bolder">Sneat</span>
+                  <span class="app-brand-text demo text-body fw-bolder">My Corper</span>
                 </a>
               </div>
               <!-- /Logo -->
               <h4 class="mb-2">Adventure starts here 🚀</h4>
 
-              <form id="formAuthentication" class="mb-3" action="" method="POST">
+              <form id="formAuthentication" class="mb-3" action="{% url 'registration:registration' %}" method="POST">
+                {% csrf_token %}
                 <div class="mb-3">
-                  <label for="email" class="form-label">Email</label>
-                  <input type="text" class="form-control" id="email" name="email" placeholder="Enter your email" />
+                  <label for="username" class="form-label">Username</label>
+                  <input 
+                    type="text" 
+                    class="form-control" 
+                    id="username" 
+                    name="username" 
+                    placeholder="Enter your username" 
+                    required
+                  />
                 </div>
                 <div class="mb-3 form-password-toggle">
                   <label class="form-label" for="password">Password</label>
@@ -147,7 +155,13 @@
 
                 <div class="mb-3">
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="terms-conditions" name="terms" />
+                    <input 
+                      class="form-check-input" 
+                      type="checkbox" 
+                      id="terms-conditions" 
+                      name="terms" 
+                      required
+                    />
                     <label class="form-check-label" for="terms-conditions">
                       I agree to
                       <a href="javascript:void(0);">privacy policy & terms</a>
@@ -159,7 +173,7 @@
 
               <p class="text-center">
                 <span>Already have an account?</span>
-                <a href="">
+                <a href="{% url 'registration:login' %}">
                   <span>Sign in instead</span>
                 </a>
               </p>
@@ -185,7 +199,16 @@
     <!-- Vendors JS -->
 
     <!-- Main JS -->
-    <script src="{% static 'custom/js/main.js"></script>
+    <script src="{% static 'custom/js/main.js' %}"></script>
+
+    <!-- alert message -->
+    {% if messages %}
+	  {% for message in messages %}
+    <script>
+      alert('{{ message }}')
+    </script>
+    {% endfor %}
+    {% endif %}
 
     <!-- Page JS -->
 

@@ -120,9 +120,9 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 # do this so you can have your static files in one static directory instead of separately in different applications
-STATICFILES_DIRS = [BASE_DIR / 'custom_static',]
+STATICFILES_DIRS = [BASE_DIR / 'static',]
 
-STATIC_ROOT = BASE_DIR / 'static'
+STATIC_ROOT = BASE_DIR / 'static_root'
 MEDIA_ROOT = BASE_DIR / 'media'
 MEDIA_URL = 'media/'
 
@@ -130,3 +130,4 @@ MEDIA_URL = 'media/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+LOGIN_URL = '/app/login/'
