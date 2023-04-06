@@ -11,4 +11,5 @@ urlpatterns = [
     url(r'^corpmember/(?P<pk>[0-9]+)/$', views.UpdateCorpMemberView.as_view(), name='edit_corpmember'),
     url(r'^corpmember/(?P<pk>[0-9]+)/delete/$', views.DeleteCorpMemberView.as_view(), name='delete_corpmember'),
     url(r'^corpmember/register/$', views.CreateCorpMembersView.as_view(), name='create_corpmember'),
+    url(r'^$', views.RedirectHomeView.as_view(), name='home'),
 ]

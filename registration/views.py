@@ -158,3 +158,8 @@ class DeleteCorpMemberView(DeleteView):
             return CorpMember.objects.all()
         else:
             return CorpMember.objects.filter(user=self.request.user)
+
+
+class RedirectHomeView(View):
+    def get(self, request, *args, **kwargs):
+        return redirect('registration:login')
