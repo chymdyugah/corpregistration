@@ -131,3 +131,6 @@ MEDIA_URL = 'media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_URL = '/app/login/'
+CSRF_TRUSTED_ORIGINS = [
+    'https://https://ict-cds.up.railway.app/'
+]
