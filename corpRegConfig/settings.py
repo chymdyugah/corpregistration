@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 from decouple import config
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -132,5 +133,6 @@ MEDIA_URL = 'media/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_URL = '/app/login/'
 CSRF_TRUSTED_ORIGINS = [
-    'https://https://ict-cds.up.railway.app/'
+    'https://ict-cds.up.railway.app'
 ]
+django_heroku.settings(locals())
