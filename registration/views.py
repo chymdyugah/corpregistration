@@ -163,3 +163,11 @@ class DeleteCorpMemberView(DeleteView):
 class RedirectHomeView(View):
     def get(self, request, *args, **kwargs):
         return redirect('registration:login')
+
+def page404(request, exception=None):
+	template_name = "page404.html"
+	return render(request, template_name, status=404)
+
+def page500(request, exception=None):
+	template_name = "page500.html"
+	return render(request, template_name, status=500)

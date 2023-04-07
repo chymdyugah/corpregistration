@@ -20,9 +20,12 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('app/', include('registration.urls')),
+    # path('app/', include('registration.urls')),
     path('', include('registration.urls')),
 ]
+
+handler404 = 'registration.views.page404'
+handler500 = 'registration.views.page500'
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
